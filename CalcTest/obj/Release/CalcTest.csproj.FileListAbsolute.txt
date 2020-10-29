@@ -1,0 +1,10 @@
+C:\Users\ms.mori\Desktop\森ふぉるだ\CalcTest\CalcTest\bin\Release\CalcTest.exe.config
+C:\Users\ms.mori\Desktop\森ふぉるだ\CalcTest\CalcTest\bin\Release\CalcTest.exe
+C:\Users\ms.mori\Desktop\森ふぉるだ\CalcTest\CalcTest\bin\Release\CalcTest.pdb
+C:\Users\ms.mori\Desktop\森ふぉるだ\CalcTest\CalcTest\obj\Release\CalcTest.csprojAssemblyReference.cache
+C:\Users\ms.mori\Desktop\森ふぉるだ\CalcTest\CalcTest\obj\Release\CalcTest.frmCalc.resources
+C:\Users\ms.mori\Desktop\森ふぉるだ\CalcTest\CalcTest\obj\Release\CalcTest.Properties.Resources.resources
+C:\Users\ms.mori\Desktop\森ふぉるだ\CalcTest\CalcTest\obj\Release\CalcTest.csproj.GenerateResource.cache
+C:\Users\ms.mori\Desktop\森ふぉるだ\CalcTest\CalcTest\obj\Release\CalcTest.csproj.CoreCompileInputs.cache
+C:\Users\ms.mori\Desktop\森ふぉるだ\CalcTest\CalcTest\obj\Release\CalcTest.exe
+C:\Users\ms.mori\Desktop\森ふぉるだ\CalcTest\CalcTest\obj\Release\CalcTest.pdb
