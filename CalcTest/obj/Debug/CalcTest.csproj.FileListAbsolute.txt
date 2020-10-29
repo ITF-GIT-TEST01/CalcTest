@@ -8,3 +8,13 @@ C:\Users\ms.mori\Desktop\森ふぉるだ\CalcTest\CalcTest\obj\Debug\CalcTest.cs
 C:\Users\ms.mori\Desktop\森ふぉるだ\CalcTest\CalcTest\obj\Debug\CalcTest.exe
 C:\Users\ms.mori\Desktop\森ふぉるだ\CalcTest\CalcTest\obj\Debug\CalcTest.pdb
 C:\Users\ms.mori\Desktop\森ふぉるだ\CalcTest\CalcTest\obj\Debug\CalcTest.csprojAssemblyReference.cache
+C:\Users\ms.mori\Desktop\ITF-GIT-TEST01\Git\CalcTest\CalcTest\bin\Debug\CalcTest.exe.config
+C:\Users\ms.mori\Desktop\ITF-GIT-TEST01\Git\CalcTest\CalcTest\bin\Debug\CalcTest.exe
+C:\Users\ms.mori\Desktop\ITF-GIT-TEST01\Git\CalcTest\CalcTest\bin\Debug\CalcTest.pdb
+C:\Users\ms.mori\Desktop\ITF-GIT-TEST01\Git\CalcTest\CalcTest\obj\Debug\CalcTest.csprojAssemblyReference.cache
+C:\Users\ms.mori\Desktop\ITF-GIT-TEST01\Git\CalcTest\CalcTest\obj\Debug\CalcTest.frmCalc.resources
+C:\Users\ms.mori\Desktop\ITF-GIT-TEST01\Git\CalcTest\CalcTest\obj\Debug\CalcTest.Properties.Resources.resources
+C:\Users\ms.mori\Desktop\ITF-GIT-TEST01\Git\CalcTest\CalcTest\obj\Debug\CalcTest.csproj.GenerateResource.cache
+C:\Users\ms.mori\Desktop\ITF-GIT-TEST01\Git\CalcTest\CalcTest\obj\Debug\CalcTest.csproj.CoreCompileInputs.cache
+C:\Users\ms.mori\Desktop\ITF-GIT-TEST01\Git\CalcTest\CalcTest\obj\Debug\CalcTest.exe
+C:\Users\ms.mori\Desktop\ITF-GIT-TEST01\Git\CalcTest\CalcTest\obj\Debug\CalcTest.pdb
