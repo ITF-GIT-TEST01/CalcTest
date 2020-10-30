@@ -138,7 +138,7 @@ namespace CalcTest
                         break;
                 }
             }
-
+            //計算結果表示
             md.Text = Prop.Result.ToString();
 
             //演算キー押下フラグON
