@@ -22,7 +22,11 @@ namespace CalcTest
     #region メイン処理
     public class Logic
     {
+        /// <summary>
+        /// プロパティクラスインスタンス
+        /// </summary>
         private CalcTest.CalcProperty Prop = new CalcProperty();
+
         #region 数字表示処理
         /// <summary>
         /// 数字表示処理
@@ -33,10 +37,14 @@ namespace CalcTest
         {
             //フォームテキスト
             var dispnum = md.Text;
+            double res;
             //演算キー押下後の処理
             if (Prop.CalcPush == true)
             {
-                Prop.Result = double.Parse(md.Text);
+                if (double.TryParse(md.Text, out res))
+                {
+                    Prop.Result = res;
+                }
                 md.Text = "";
                 Prop.CalcPush = false;
             }
@@ -54,7 +62,7 @@ namespace CalcTest
                     break;
                 //０以外
                 default:
-                    if (dispnum == "0")
+                    if (dispnum == "0" || !double.TryParse(md.Text, out _))
                     {
                         //表示が０の時は画面クリア
                         md.Text = "";
@@ -64,7 +72,10 @@ namespace CalcTest
             //メインディスプレイに数字を表示
             md.Text += ((int)keycode).ToString();
             //計算用入力値確保
-            Prop.InputNum = double.Parse(md.Text);
+            if (double.TryParse(md.Text, out res))
+            {
+                Prop.InputNum = res;
+            }
         }
         #endregion
 
@@ -80,14 +91,14 @@ namespace CalcTest
             Prop.MemNum = Prop.Result;
             //前回押下された演算キーをシフト
             Prop.CalcKeyMem2 = Prop.CalcKeyMem1;
-            
+
             if (keyCode != CalcKeyCode.Equals)
             {
                 //今回押下された演算キーを記憶
                 Prop.CalcKeyMem1 = keyCode;
             }
             //演算キー連続押下はイコール以外は計算しない
-            if(Prop.CalcPush != true || keyCode == CalcKeyCode.Equals)
+            if (Prop.CalcPush != true || keyCode == CalcKeyCode.Equals)
             {
                 //前回押下された演算キーで計算
                 switch (Prop.CalcKeyMem2)
@@ -104,12 +115,14 @@ namespace CalcTest
                     case CalcKeyCode.Pro:
                         Prop.Result = Prop.MemNum * Prop.InputNum;
                         break;
-                    //除算
+                    //除算　0
                     case CalcKeyCode.Quoti when Prop.InputNum == 0:
                         md.Text = "0で割ることはできません";
+                        Prop = new CalcProperty();
                         return;
+                    //除算
                     case CalcKeyCode.Quoti:
-                        Prop.Result = Prop.MemNum / Prop.InputNum;             
+                        Prop.Result = Prop.MemNum / Prop.InputNum;
                         if (double.IsNaN(Prop.Result))
                         {
                             //演算結果が非数の場合０
@@ -118,7 +131,10 @@ namespace CalcTest
                         break;
                     //前回押下演算キーなし
                     case CalcKeyCode.None:
-                        Prop.Result = double.Parse(md.Text);
+                        if (double.TryParse(md.Text, out var res))
+                        {
+                            Prop.Result = res;
+                        }                         
                         break;
                 }
             }
