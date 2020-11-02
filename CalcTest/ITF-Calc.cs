@@ -6,7 +6,7 @@ namespace CalcTest
     public partial class frmCalc : Form
     {
         /// <summary>
-        /// 処理クラスインスタンス
+        /// 処理クラス
         /// </summary>
         private readonly Logic logic;
         /// <summary>
