@@ -100,5 +100,18 @@ namespace CalcTest
         }
         #endregion
 
+        #region 小数点ボタンイベント
+        private void Dot_Click(object sender, EventArgs e)
+        {
+            logic.Dot(MainDisp);
+        }
+        #endregion
+
+        #region 小数点ボタンイベント
+        private void PorM_Click(object sender, EventArgs e)
+        {
+            logic.PorM(MainDisp);
+        }
+        #endregion
     }
 }

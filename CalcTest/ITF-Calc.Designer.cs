@@ -46,6 +46,8 @@
             this.Equal = new System.Windows.Forms.Button();
             this.ClearEntry = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
+            this.Dot = new System.Windows.Forms.Button();
+            this.PorM = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // MainDisp
@@ -265,11 +267,37 @@
             this.Clear.UseVisualStyleBackColor = true;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
+            // Dot
+            // 
+            this.Dot.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.Dot.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Dot.Location = new System.Drawing.Point(166, 331);
+            this.Dot.Name = "Dot";
+            this.Dot.Size = new System.Drawing.Size(64, 45);
+            this.Dot.TabIndex = 18;
+            this.Dot.Text = "．";
+            this.Dot.UseVisualStyleBackColor = true;
+            this.Dot.Click += new System.EventHandler(this.Dot_Click);
+            // 
+            // PorM
+            // 
+            this.PorM.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.PorM.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.PorM.Location = new System.Drawing.Point(34, 331);
+            this.PorM.Name = "PorM";
+            this.PorM.Size = new System.Drawing.Size(64, 45);
+            this.PorM.TabIndex = 19;
+            this.PorM.Text = "±";
+            this.PorM.UseVisualStyleBackColor = true;
+            this.PorM.Click += new System.EventHandler(this.PorM_Click);
+            // 
             // frmCalc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(314, 384);
+            this.Controls.Add(this.PorM);
+            this.Controls.Add(this.Dot);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.ClearEntry);
             this.Controls.Add(this.Equal);
@@ -315,6 +343,8 @@
         private System.Windows.Forms.Button Equal;
         private System.Windows.Forms.Button ClearEntry;
         private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.Button Dot;
+        private System.Windows.Forms.Button PorM;
     }
 }
 

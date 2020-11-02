@@ -134,7 +134,7 @@ namespace CalcTest
                         if (double.TryParse(md.Text, out var res))
                         {
                             Prop.Result = res;
-                        }                         
+                        }
                         break;
                 }
             }
@@ -154,7 +154,7 @@ namespace CalcTest
         /// <param name="md">メインディスプレイTextBox</param>
         public void Clear(TextBox md)
         {
-            //プロパティ初期化
+            //全ての値を初期化
             Prop = new CalcProperty();
             md.Text = "0";
         }
@@ -164,10 +164,39 @@ namespace CalcTest
         /// <param name="md">メインディスプレイTextBox</param>
         public void ClearEntry(TextBox md)
         {
+            //入力された値を０に
             md.Text = "0";
             Prop.InputNum = 0;
         }
         #endregion
+
+        #region 小数点ボタン
+        /// <summary>
+        /// 小数点ボタン
+        /// </summary>
+        /// <param name="md"></param>
+        public void Dot(TextBox md)
+        {
+            if (md.Text.Contains("."))
+            {
+                //すでに"."が表示済みの場合表示しない
+                return;
+            }
+            md.Text += ".";
+        }
+        #endregion
+
+        public void PorM(TextBox md)
+        {
+            if (double.TryParse(md.Text, out double val))
+            {
+                //符号
+                val *= -1;
+                //入力値と表示を変更
+                Prop.InputNum = val;
+                md.Text = val.ToString();
+            }
+        }
     }
     #endregion
 
