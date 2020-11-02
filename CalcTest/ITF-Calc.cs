@@ -107,7 +107,7 @@ namespace CalcTest
         }
         #endregion
 
-        #region 小数点ボタンイベント
+        #region 符号ボタンイベント
         private void PorM_Click(object sender, EventArgs e)
         {
             logic.PorM(MainDisp);
