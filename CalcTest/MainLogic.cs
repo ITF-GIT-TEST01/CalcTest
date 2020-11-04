@@ -37,15 +37,15 @@ namespace CalcTest
         {
             //フォームテキスト
             var dispnum = md.Text;
-            double res;
             //演算キー押下後の処理
             if (Prop.CalcPush == true)
             {
-                if (double.TryParse(md.Text, out res))
+                if (double.TryParse(md.Text, out var res))
                 {
                     Prop.Result = res;
                 }
                 md.Text = "";
+                //演算キー押下フラグＯＦＦ
                 Prop.CalcPush = false;
             }
             //数字キー押下処理
@@ -64,7 +64,7 @@ namespace CalcTest
                 default:
                     if (dispnum == "0" || !double.TryParse(md.Text, out _))
                     {
-                        //表示が０の時は画面クリア
+                        //表示が０または数値以外の時は画面クリア
                         md.Text = "";
                     }
                     break;
@@ -72,9 +72,9 @@ namespace CalcTest
             //メインディスプレイに数字を表示
             md.Text += ((int)keycode).ToString();
             //計算用入力値確保
-            if (double.TryParse(md.Text, out res))
+            if (double.TryParse(md.Text, out var InNum))
             {
-                Prop.InputNum = res;
+                Prop.InputNum = InNum;
             }
         }
         #endregion
@@ -94,11 +94,11 @@ namespace CalcTest
 
             if (keyCode != CalcKeyCode.Equals)
             {
-                //今回押下された演算キーを記憶
+                //今回押下された演算キーを記憶 イコールは記憶しない
                 Prop.CalcKeyMem1 = keyCode;
             }
             //演算キー連続押下はイコール以外は計算しない
-            if (Prop.CalcPush != true || keyCode == CalcKeyCode.Equals)
+            if (Prop.CalcPush == false || keyCode == CalcKeyCode.Equals)
             {
                 //前回押下された演算キーで計算
                 switch (Prop.CalcKeyMem2)
@@ -186,9 +186,10 @@ namespace CalcTest
         }
         #endregion
 
+        #region 符号ボタン
         public void PorM(TextBox md)
         {
-            if (double.TryParse(md.Text, out double val))
+            if (double.TryParse(md.Text, out var val))
             {
                 //符号
                 val *= -1;
@@ -197,6 +198,7 @@ namespace CalcTest
                 md.Text = val.ToString();
             }
         }
+        #endregion
     }
     #endregion
 

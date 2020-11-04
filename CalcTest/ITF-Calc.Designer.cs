@@ -48,6 +48,7 @@
             this.Clear = new System.Windows.Forms.Button();
             this.Dot = new System.Windows.Forms.Button();
             this.PorM = new System.Windows.Forms.Button();
+            this.Dummy = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // MainDisp
@@ -291,11 +292,22 @@
             this.PorM.UseVisualStyleBackColor = true;
             this.PorM.Click += new System.EventHandler(this.PorM_Click);
             // 
+            // Dummy
+            // 
+            this.Dummy.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.Dummy.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Dummy.Location = new System.Drawing.Point(34, 440);
+            this.Dummy.Name = "Dummy";
+            this.Dummy.Size = new System.Drawing.Size(64, 45);
+            this.Dummy.TabIndex = 20;
+            this.Dummy.UseVisualStyleBackColor = true;
+            // 
             // frmCalc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 384);
+            this.ClientSize = new System.Drawing.Size(315, 386);
+            this.Controls.Add(this.Dummy);
             this.Controls.Add(this.PorM);
             this.Controls.Add(this.Dot);
             this.Controls.Add(this.Clear);
@@ -316,8 +328,11 @@
             this.Controls.Add(this.Num2);
             this.Controls.Add(this.Num1);
             this.Controls.Add(this.MainDisp);
+            this.KeyPreview = true;
             this.Name = "frmCalc";
             this.Text = "電卓";
+            this.Load += new System.EventHandler(this.frmCalc_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCalc_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,6 +360,7 @@
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.Button Dot;
         private System.Windows.Forms.Button PorM;
+        private System.Windows.Forms.Button Dummy;
     }
 }
 

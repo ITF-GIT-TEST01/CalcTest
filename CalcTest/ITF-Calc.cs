@@ -113,5 +113,83 @@ namespace CalcTest
             logic.PorM(MainDisp);
         }
         #endregion
+        /// <summary>
+        /// キーダウンイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void frmCalc_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyData)
+            {
+                //数字キー
+                case Keys.NumPad0:
+                case Keys.D0:
+                    logic.DispNumLogic(MainDisp, NumKeyCode.Num0);
+                    break;
+                case Keys.NumPad1:
+                case Keys.D1:
+                    logic.DispNumLogic(MainDisp, NumKeyCode.Num1);
+                    break;
+                case Keys.NumPad2:
+                case Keys.D2:
+                    logic.DispNumLogic(MainDisp, NumKeyCode.Num2);
+                    break;
+                case Keys.NumPad3:
+                case Keys.D3:
+                    logic.DispNumLogic(MainDisp, NumKeyCode.Num3);
+                    break;
+                case Keys.NumPad4:
+                case Keys.D4:
+                    logic.DispNumLogic(MainDisp, NumKeyCode.Num4);
+                    break;
+                case Keys.NumPad5:
+                case Keys.D5:
+                    logic.DispNumLogic(MainDisp, NumKeyCode.Num5);
+                    break;
+                case Keys.NumPad6:
+                case Keys.D6:
+                    logic.DispNumLogic(MainDisp, NumKeyCode.Num6);
+                    break;
+                case Keys.NumPad7:
+                case Keys.D7:
+                    logic.DispNumLogic(MainDisp, NumKeyCode.Num7);
+                    break;
+                case Keys.NumPad8:
+                case Keys.D8:
+                    logic.DispNumLogic(MainDisp, NumKeyCode.Num8);
+                    break;
+                case Keys.NumPad9:
+                case Keys.D9:
+                    logic.DispNumLogic(MainDisp, NumKeyCode.Num9);
+                    break;
+
+                //演算キー
+                case Keys.Add:
+                case Keys.Oemplus | Keys.Shift:              
+                    logic.CalcMain(MainDisp, CalcKeyCode.Sum);
+                    break;
+                case Keys.Subtract:
+                case Keys.OemMinus:
+                    logic.CalcMain(MainDisp, CalcKeyCode.Diff);
+                    break;
+                case Keys.Multiply:
+                case Keys.Oem1 | Keys.Shift:
+                    logic.CalcMain(MainDisp, CalcKeyCode.Pro);
+                    break;
+                case Keys.Divide:
+                case Keys.Oem2:
+                    logic.CalcMain(MainDisp, CalcKeyCode.Quoti);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private void frmCalc_Load(object sender, EventArgs e)
+        {
+            ActiveControl = Dummy;
+        }
     }
 }
