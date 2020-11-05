@@ -55,11 +55,11 @@
             // 
             this.MainDisp.BackColor = System.Drawing.Color.White;
             this.MainDisp.Enabled = false;
-            this.MainDisp.Font = new System.Drawing.Font("MS UI Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.MainDisp.Font = new System.Drawing.Font("MS UI Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.MainDisp.Location = new System.Drawing.Point(6, 44);
             this.MainDisp.Name = "MainDisp";
             this.MainDisp.ReadOnly = true;
-            this.MainDisp.Size = new System.Drawing.Size(302, 39);
+            this.MainDisp.Size = new System.Drawing.Size(302, 36);
             this.MainDisp.TabIndex = 0;
             this.MainDisp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 

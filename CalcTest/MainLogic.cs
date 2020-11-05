@@ -85,13 +85,12 @@ namespace CalcTest
         /// </summary>
         /// <param name="md">メインディスプレイTextBox</param>
         /// <param name="keyCode">演算キー</param>
-        public void CalcMain(TextBox md, CalcKeyCode keyCode)
+        public bool CalcMain(TextBox md, CalcKeyCode keyCode)
         {
             //前回の計算結果を左辺にシフト
             Prop.MemNum = Prop.Result;
             //前回押下された演算キーをシフト
             Prop.CalcKeyMem2 = Prop.CalcKeyMem1;
-
             if (keyCode != CalcKeyCode.Equals)
             {
                 //今回押下された演算キーを記憶 イコールは記憶しない
@@ -117,16 +116,19 @@ namespace CalcTest
                         break;
                     //除算　0
                     case CalcKeyCode.Quoti when Prop.InputNum == 0:
+                        //0で除算
                         md.Text = "0で割ることはできません";
                         Prop = new CalcProperty();
-                        return;
+                        return false;
                     //除算
                     case CalcKeyCode.Quoti:
                         Prop.Result = Prop.MemNum / Prop.InputNum;
                         if (double.IsNaN(Prop.Result))
                         {
                             //演算結果が非数の場合０
-                            Prop.Result = 0;
+                            md.Text = "結果が定義されていません";
+                            Prop = new CalcProperty();
+                            return false;
                         }
                         break;
                     //前回押下演算キーなし
@@ -143,7 +145,7 @@ namespace CalcTest
 
             //演算キー押下フラグON
             Prop.CalcPush = true;
-
+            return true;
         }
         #endregion
 
@@ -202,4 +204,15 @@ namespace CalcTest
     }
     #endregion
 
+    #region 画面制御クラス
+    public class EnableControl
+    {
+
+        public void BtnEnable()
+        {
+
+        }
+
+    }
+    #endregion
 }

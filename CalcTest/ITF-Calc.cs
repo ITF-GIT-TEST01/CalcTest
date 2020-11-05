@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace CalcTest
@@ -9,6 +10,7 @@ namespace CalcTest
         /// 処理クラス
         /// </summary>
         private readonly Logic logic;
+
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -20,47 +22,59 @@ namespace CalcTest
             logic = new Logic();
             //初期化
             MainDisp.Text = "0";
+
+            BtnEnable();
         }
 
         #region 数字ボタンイベント
         private void Num1_Click(object sender, EventArgs e)
         {
+            BtnEnable();
             logic.DispNumLogic(MainDisp, NumKeyCode.Num1);
         }
         private void Num2_Click(object sender, EventArgs e)
         {
+            BtnEnable();
             logic.DispNumLogic(MainDisp, NumKeyCode.Num2);
         }
         private void Num3_Click(object sender, EventArgs e)
         {
+            BtnEnable();
             logic.DispNumLogic(MainDisp, NumKeyCode.Num3);
         }
         private void Num4_Click(object sender, EventArgs e)
         {
+            BtnEnable();
             logic.DispNumLogic(MainDisp, NumKeyCode.Num4);
         }
         private void Num5_Click(object sender, EventArgs e)
         {
+            BtnEnable();
             logic.DispNumLogic(MainDisp, NumKeyCode.Num5);
         }
         private void Num6_Click(object sender, EventArgs e)
         {
+            BtnEnable();
             logic.DispNumLogic(MainDisp, NumKeyCode.Num6);
         }
         private void Num7_Click(object sender, EventArgs e)
         {
+            BtnEnable();
             logic.DispNumLogic(MainDisp, NumKeyCode.Num7);
         }
         private void Num8_Click(object sender, EventArgs e)
         {
+            BtnEnable();
             logic.DispNumLogic(MainDisp, NumKeyCode.Num8);
         }
         private void Num9_Click(object sender, EventArgs e)
         {
+            BtnEnable();
             logic.DispNumLogic(MainDisp, NumKeyCode.Num9);
         }
         private void Num0_Click(object sender, EventArgs e)
         {
+            BtnEnable();
             logic.DispNumLogic(MainDisp, NumKeyCode.Num0);
         }
         #endregion
@@ -68,23 +82,24 @@ namespace CalcTest
         #region 演算ボタンイベント
         private void Sum_Click(object sender, EventArgs e)
         {
-            logic.CalcMain(MainDisp, CalcKeyCode.Sum);
+            BtnEnable(logic.CalcMain(MainDisp, CalcKeyCode.Sum));
         }
         private void Diff_Click(object sender, EventArgs e)
         {
-            logic.CalcMain(MainDisp, CalcKeyCode.Diff);
+            BtnEnable(logic.CalcMain(MainDisp, CalcKeyCode.Diff));
         }
         private void Pro_Click(object sender, EventArgs e)
         {
-            logic.CalcMain(MainDisp, CalcKeyCode.Pro);
+            BtnEnable(logic.CalcMain(MainDisp, CalcKeyCode.Pro));
         }
         private void Quoti_Click(object sender, EventArgs e)
         {
-            logic.CalcMain(MainDisp, CalcKeyCode.Quoti);
+            BtnEnable(logic.CalcMain(MainDisp, CalcKeyCode.Quoti));
         }
         private void Equals_Click(object sender, EventArgs e)
         {
-            logic.CalcMain(MainDisp, CalcKeyCode.Equals);
+            BtnEnable();
+            BtnEnable(logic.CalcMain(MainDisp, CalcKeyCode.Equals));
         }
         #endregion
 
@@ -113,6 +128,8 @@ namespace CalcTest
             logic.PorM(MainDisp);
         }
         #endregion
+
+        #region キーダウンイベント
         /// <summary>
         /// キーダウンイベント
         /// </summary>
@@ -166,7 +183,7 @@ namespace CalcTest
 
                 //演算キー
                 case Keys.Add:
-                case Keys.Oemplus | Keys.Shift:              
+                case Keys.Oemplus | Keys.Shift:
                     logic.CalcMain(MainDisp, CalcKeyCode.Sum);
                     break;
                 case Keys.Subtract:
@@ -186,10 +203,32 @@ namespace CalcTest
                     break;
             }
         }
+        #endregion
 
+
+        #region 内部処理
+        /// <summary>
+        /// 画面表示時にフォーカスを枠外のダミーに飛ばす
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmCalc_Load(object sender, EventArgs e)
         {
             ActiveControl = Dummy;
         }
+        /// <summary>
+        /// 演算ボタン活性非活性制御処理
+        /// </summary>
+        /// <param name="Enable"></param>
+        private void BtnEnable(bool Enable = true)
+        {
+            Sum.Enabled = Enable;
+            Diff.Enabled = Enable;
+            Pro.Enabled = Enable;
+            Quoti.Enabled = Enable;
+        }
+        #endregion
+
+
     }
 }
