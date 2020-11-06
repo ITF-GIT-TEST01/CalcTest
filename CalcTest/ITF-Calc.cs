@@ -226,6 +226,8 @@ namespace CalcTest
             Diff.Enabled = Enable;
             Pro.Enabled = Enable;
             Quoti.Enabled = Enable;
+            Dot.Enabled = Enable;
+            PorM.Enabled = Enable;
         }
         #endregion
 

@@ -24,4 +24,12 @@ namespace CalcTest
         Quoti = 4,
         Equals = 5
     }
+    partial class CalcProperty
+    {
+        //演算キー１
+        public CalcKeyCode CalcKeyMem1 { get; set; }
+        //演算キー２
+        public CalcKeyCode CalcKeyMem2 { get; set; }
+
+    }
 }

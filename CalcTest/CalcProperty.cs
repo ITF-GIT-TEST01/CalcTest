@@ -10,12 +10,8 @@ namespace CalcTest
     /// <summary>
     /// プロパティクラス
     /// </summary>
-    class CalcProperty
+    partial class CalcProperty
     {
-        //演算キー１
-        public CalcKeyCode CalcKeyMem1 { get; set; }
-        //演算キー２
-        public CalcKeyCode CalcKeyMem2 { get; set; }
         //入力数値
         public double InputNum { get; set; }
         //数値記憶

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Resources;
 
 namespace CalcTest
 {
@@ -25,7 +26,7 @@ namespace CalcTest
         /// <summary>
         /// プロパティクラスインスタンス
         /// </summary>
-        private CalcTest.CalcProperty Prop = new CalcProperty();
+        private CalcProperty Prop = new CalcProperty();
 
         #region 数字表示処理
         /// <summary>
@@ -85,8 +86,10 @@ namespace CalcTest
         /// </summary>
         /// <param name="md">メインディスプレイTextBox</param>
         /// <param name="keyCode">演算キー</param>
+        /// <returns>bool</returns>
         public bool CalcMain(TextBox md, CalcKeyCode keyCode)
         {
+
             //前回の計算結果を左辺にシフト
             Prop.MemNum = Prop.Result;
             //前回押下された演算キーをシフト
@@ -115,9 +118,9 @@ namespace CalcTest
                         Prop.Result = Prop.MemNum * Prop.InputNum;
                         break;
                     //除算　0
-                    case CalcKeyCode.Quoti when Prop.InputNum == 0:
+                    case CalcKeyCode.Quoti when Prop.MemNum != 0 && Prop.InputNum == 0:
                         //0で除算
-                        md.Text = "0で割ることはできません";
+                        md.Text = Msg.ZERO_JYOZAN;
                         Prop = new CalcProperty();
                         return false;
                     //除算
@@ -126,7 +129,7 @@ namespace CalcTest
                         if (double.IsNaN(Prop.Result))
                         {
                             //演算結果が非数の場合０
-                            md.Text = "結果が定義されていません";
+                            md.Text = Msg.NaN_ERR;
                             Prop = new CalcProperty();
                             return false;
                         }
@@ -204,15 +207,4 @@ namespace CalcTest
     }
     #endregion
 
-    #region 画面制御クラス
-    public class EnableControl
-    {
-
-        public void BtnEnable()
-        {
-
-        }
-
-    }
-    #endregion
 }
